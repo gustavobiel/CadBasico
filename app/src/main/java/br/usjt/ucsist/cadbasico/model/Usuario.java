@@ -12,11 +12,13 @@ public class Usuario {
     private String cpf;
     private String email;
     private String senha;
-    public Usuario(String nome, String cpf, String email, String senha) {
+    private String tel;
+    public Usuario(String nome, String cpf, String email, String senha, String tel) {
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
         this.senha = senha;
+        this.tel = tel;
     }
 
     public Usuario() {
@@ -61,4 +63,8 @@ public class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+    public String getTel() { return tel; }
+
+    public void setTel(String tel) { this.tel = tel; }
 }

@@ -24,6 +24,7 @@ public class CadastroActivity extends AppCompatActivity {
     private EditText editTextCPF;
     private EditText editTextEmail;
     private EditText editTextSenha;
+    private EditText editTextTel;
 
 
 
@@ -37,6 +38,7 @@ public class CadastroActivity extends AppCompatActivity {
         editTextCPF = findViewById(R.id.editTextCpf);
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextSenha = findViewById(R.id.editTextSenha);
+        editTextTel = findViewById(R.id.editTextTel);
 
         usuarioViewModel = new ViewModelProvider(this).get(UsuarioViewModel.class);
 
@@ -55,6 +57,7 @@ public class CadastroActivity extends AppCompatActivity {
             editTextCPF.setText(usuario.getCpf());
             editTextEmail.setText(usuario.getEmail());
             editTextSenha.setText(usuario.getSenha());
+            editTextTel.setText(usuario.getTel());
         }
     }
 
@@ -68,6 +71,7 @@ public class CadastroActivity extends AppCompatActivity {
         usuarioCorrente.setCpf(editTextCPF.getText().toString());
         usuarioCorrente.setEmail(editTextEmail.getText().toString());
         usuarioCorrente.setSenha(editTextSenha.getText().toString());
+        usuarioCorrente.setTel(editTextTel.getText().toString());
         usuarioViewModel.insert(usuarioCorrente);
         Toast.makeText(this,"Usuário salvo com sucesso",
                 Toast.LENGTH_SHORT).show();
