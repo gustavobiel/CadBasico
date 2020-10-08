@@ -27,6 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     private Usuario usuarioCorrente;
     private EditText editTextEmail;
     private EditText editTextSenha;
+    private EditText editTextTel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
 
         editTextEmail = findViewById(R.id.editTextUsuario);
         editTextSenha = findViewById(R.id.editTextSenha);
+        editTextTel = findViewById(R.id.editTextTel);
 
         textViewNovoCadastro = findViewById(R.id.textViewNovoCadastro);
         buttonLogin = findViewById(R.id.buttonLogin);
@@ -89,7 +91,8 @@ public class LoginActivity extends AppCompatActivity {
     public void login(View view) {
 
         if(usuarioCorrente != null){
-            if(usuarioCorrente.getEmail().equalsIgnoreCase(editTextEmail.getText().toString())
+            if((usuarioCorrente.getEmail().equalsIgnoreCase(editTextEmail.getText().toString())
+            || usuarioCorrente.getTel().equalsIgnoreCase(editTextTel.getText().toString()))
             && usuarioCorrente.getSenha().equals(editTextSenha.getText().toString())){
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
